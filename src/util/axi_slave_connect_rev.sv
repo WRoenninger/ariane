@@ -12,8 +12,8 @@
 // Author: Florian Zaruba <zarubaf@iis.ee.ethz.ch>
 
 module axi_slave_connect_rev (
-    input  ariane_axi::req_t    axi_req_i,
-    output ariane_axi::resp_t   axi_resp_o,
+    input  ariane_axi::req_slv_t    axi_req_i,
+    output ariane_axi::resp_slv_t   axi_resp_o,
     AXI_BUS.out slave
 );
 
@@ -27,6 +27,7 @@ module axi_slave_connect_rev (
     assign slave.aw_prot       = axi_req_i.aw.prot;
     assign slave.aw_qos        = axi_req_i.aw.qos;
     assign slave.aw_region     = axi_req_i.aw.region;
+    assign slave.aw_atop       = axi_req_i.aw.atop;
     assign slave.aw_user       = '0;
     assign slave.aw_valid      = axi_req_i.aw_valid;
     assign axi_resp_o.aw_ready = slave.aw_ready;

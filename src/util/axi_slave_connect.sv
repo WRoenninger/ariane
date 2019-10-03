@@ -12,8 +12,8 @@
 // Author: Florian Zaruba <zarubaf@iis.ee.ethz.ch>
 
 module axi_slave_connect (
-    output ariane_axi::req_t    axi_req_o,
-    input  ariane_axi::resp_t   axi_resp_i,
+    output ariane_axi::req_slv_t    axi_req_o,
+    input  ariane_axi::resp_slv_t   axi_resp_i,
     AXI_BUS.in slave
 );
 
